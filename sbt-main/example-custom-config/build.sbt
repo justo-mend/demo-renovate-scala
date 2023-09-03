@@ -43,7 +43,7 @@ lazy val utils = (project in file("utils"))
     // Declare dependencies in the appropriate configurations
     libraryDependencies ++= Seq(
        "org.fusesource.scalate" % "scalate-core" % "1.5.0" % Scalate,
-       "org.squeryl" %% "squeryl" % "0.9.5-6" % Scalate,
+       "org.squeryl" %% "squeryl" % "0.10.0" % Scalate,
        "net.sf.saxon" % "saxon" % "8.7" % Saxon
     )
   )
