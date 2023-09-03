@@ -1,0 +1,43 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:base"
+	],
+
+"hostRules": [
+    {
+      "hostType": "merge-confidence",
+      "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InFhQHdoaXRlc291cmNlc29mdHdhcmUuY29tIiwidXVpZCI6ImRiNTgyMzdhLWJjNmUtNDQ4MS05ZDc2LTQ4ZmQyOWE4MDc3YiIsIm9yZ05hbWUiOiJzYXN0LWRldi1naXRodWItbmV3Iiwib3JnVXVpZCI6IjdkMzM3MDk4LWE2NGYtNGY3Zi1iNGRiLWU0MDIxYjM0ZDVmNyIsImRvbWFpbk5hbWUiOiJzYXN0LWRldi1naXRodWItbmV3IiwiZG9tYWluVXVpZCI6IjdkMzM3MDk4LWE2NGYtNGY3Zi1iNGRiLWU0MDIxYjM0ZDVmNyIsInNlc3Npb25TdGFydFRpbWUiOjE2OTE0OTk1MTQ5MDUsImNvcnJlbGF0aW9uSWQiOiIwNTViMzg2NjdmMjEzNGNjYTgwNjRhMWQxM2EzZDk0MmUiLCJpYXQiOjE2OTE0OTk2NDgsImV4cCI6MTY5MTU4NjA0OH0.b_evkgzO72KGyaxQVq3yrQYnlbLoAUp86_3Fg9Sl27MBDRKy_IL7FbFyWqeQD7QnDVA3A2bUqwDcFozoWbaWX-hjU76cFbXsOrbMN6a1HBl5yU_vj1ZSHnmxoIt26wpbukRxK6wNZLy7vBfsMZDRgk6h6NPu0BhnFNhjJycTL7RHIk1VPyQs8RJ9Nvum-YQeCbxvNzQ83-2LPJHAHiE5Nh9xl2DO2wdLc2QXdgfoWnTeruyXYyPjVf0HK2YGnVZ6dgZWTxNxZrWI273zVS2D9Slw5mFsUWlXITP5ymgnHkRtuZU-FVt_97FOndJOOS0GvpfGu8YMOFmSrt9VUa7QoHxN7WqK7dbzqM-Dmp-_WxPIoXU5rW0K8Gcfx28QRRmsiZGvcyrTHBJmccvW00fywoOcf7k0MlCHXD4f-eSuTG7lxcsYVF-kq5ifHCCFuEKstST7e4MgI4buHt4EUg-erJ_5CCd-Xpv6oZfS1PZkKva8vbOUW28jLhrrMe337-7eYR073cYBTU7ORyXygA3Gi5NUMwbSV5d5C0LRQrH6QjKb6IcnHdqtYjP4oZ2LD59EUJ_38VENIYmHM8dTki-_uxnbQsn961gsRmyBv-ML5C7g3GjvWHW6-Mcy7sFR85FJKXpDFFxnZeUQblDkuXs-2nRnp7M2gfpBBDeSPzy_yz0"
+    }
+  ],
+	"prBodyDefinitions": {
+		"Age": "[![age](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/age-slim)](https://docs.renovatebot.com/merge-confidence/)",
+		"Adoption": "[![adoption](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/adoption-slim)](https://docs.renovatebot.com/merge-confidence/)",
+		"Passing": "[![passing](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/compatibility-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)",
+		"Confidence": "[![confidence](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/confidence-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)"
+	},
+	"packageRules": [{
+		"datasources": ["maven", "npm", "pypi", "nuget", "rubygems", "sbt-package"],
+		"updateTypes": ["patch", "minor", "major"],
+		"prBodyColumns": ["Package", "Change", "Age", "Adoption", "Passing", "Confidence"]
+	},
+		
+
+		{
+			"matchConfidence": ["very high"],
+			"groupName": "very high merge confidence"
+		},
+		{
+			"matchConfidence": ["high"],
+			"groupName": "high merge confidence"
+		},
+		{
+			"matchConfidence": ["low"],
+			"groupName": "low merge confidence"
+		},
+		{
+			"matchConfidence": ["neutral"],
+			"groupName": "neutral merge confidence"
+		}
+	]
+}

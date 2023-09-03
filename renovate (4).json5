@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "datasources": ["maven", "npm", "pypi", "packagist", "nuget", "rubygems", "sbt-package"],
+      "prBodyColumns": ["Package", "Change", "Age", "Adoption", "Passing", "Confidence"]
+    },
+
+    /* Group by update type - major, minor, patch
+    {
+      "groupName": "major",
+      "matchUpdateTypes": ["major"],
+    },
+    {
+      "groupName": "minor and patch",
+      "matchUpdateTypes": ["minor", "patch"],
+    },
+    */
+  ]
+}
