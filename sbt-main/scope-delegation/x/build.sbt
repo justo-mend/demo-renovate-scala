@@ -12,14 +12,14 @@ lazy val projX = (project in file("x"))
 // #fig1
 
 // #fig_c
-ThisBuild / packageBin / scalaVersion := "2.12.2"
+ThisBuild / packageBin / scalaVersion := "2.13.12"
 
 lazy val projC = (project in file("c"))
   .settings(
     name := {
       "foo-" + (packageBin / scalaVersion).value
     },
-    scalaVersion := "2.11.11"
+    scalaVersion := "2.13.12"
   )
 // #fig_c
 
