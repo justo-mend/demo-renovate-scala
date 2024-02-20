@@ -11,7 +11,7 @@ object ScalafmtCliPlugin extends AutoPlugin {
   import autoImport._
   override lazy val projectSettings = Seq(
     ivyConfigurations += ScalafmtSandbox,
-    libraryDependencies += "org.scalameta" %% "scalafmt-cli" % "2.7.5" % ScalafmtSandbox,
+    libraryDependencies += "org.scalameta" %% "scalafmt-cli" % "3.8.0" % ScalafmtSandbox,
     scalafmt := (ScalafmtSandbox / run).evaluated
   ) ++ inConfig(ScalafmtSandbox)(
     Seq(
